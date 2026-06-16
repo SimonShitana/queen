@@ -448,7 +448,7 @@ def main(page: ft.Page):
         ),
     )
 
-    # 6. Technical Blog Section - WITH VIDEO PLAYER
+    # 6. Technical Blog Section - WITH FIXED VIDEO PLAYER
     blog_section = ft.Container(
         key="blog",
         bgcolor=LIGHT_BG,
@@ -482,7 +482,7 @@ def main(page: ft.Page):
                                 ])
                             ),
                             
-                            # ── VIDEO PLAYER ──────────────────────────────────
+                            # ── FIXED VIDEO PLAYER ──────────────────────────────────
                             ft.Container(
                                 height=400,
                                 width=float("inf"),
@@ -493,14 +493,14 @@ def main(page: ft.Page):
                                     expand=True,
                                     playlist=[
                                         ftv.VideoMedia(
-                                            "/video/video.mp4"  # Video file in assets/video/
+                                            "video/video.mp4"  # Path relative to assets folder
                                         )
                                     ],
                                     playlist_mode=ftv.PlaylistMode.LOOP,
                                     fill_color=PRIMARY_PINK,
                                     aspect_ratio=16/9,
                                     volume=100,
-                                    autoplay=False,
+                                    autoplay=True,  # Auto-play when page loads
                                     show_controls=True,
                                     filter_quality=ft.FilterQuality.HIGH,
                                     muted=False,
